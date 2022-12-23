@@ -88,7 +88,7 @@ public class GunSystem : MonoBehaviour
         }
 
         // graphics
-        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
+        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.LookRotation(rayHit.normal)); // Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0)); (Quaternion.LookRotation(rayHit.normal) faces towards player, or more accurately, the ray(?))
         Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         bulletsLeft--;
