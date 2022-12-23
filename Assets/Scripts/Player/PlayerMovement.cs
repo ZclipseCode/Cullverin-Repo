@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private float playerHeight;
     [SerializeField] private LayerMask whatIsGround;
-    private bool grounded;
+    public bool grounded;
 
     [SerializeField] private Transform orientation;
 
