@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform orientation;
 
+    [Header("Animation")]
+    [SerializeField] Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -71,6 +74,15 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
+        }
+
+        // animation
+        if (rb.velocity.magnitude > 0)
+        {
+            animator.SetBool("isRunning", true);
+        } else
+        {
+            animator.SetBool("isRunning", false);
         }
     }
 

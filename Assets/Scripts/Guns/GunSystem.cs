@@ -25,10 +25,17 @@ public class GunSystem : MonoBehaviour
     [SerializeField] private GameObject muzzleFlash, bulletHoleGraphic;
     [SerializeField] private TextMeshProUGUI text;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip shootAudio;
+    [SerializeField] AudioClip reloadAudio;
+    AudioSource audioSource;
+
     private void Awake()
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -100,6 +107,8 @@ public class GunSystem : MonoBehaviour
         {
             Invoke("Shoot", timeBetweenShots);
         }
+
+        audioSource.PlayOneShot(shootAudio);
     }
 
     private void ResetShot()
@@ -111,6 +120,8 @@ public class GunSystem : MonoBehaviour
     {
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
+
+        audioSource.PlayOneShot(reloadAudio);
     }
 
     private void ReloadFinished()

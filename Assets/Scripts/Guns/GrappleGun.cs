@@ -23,9 +23,14 @@ public class GrappleGun : MonoBehaviour
     [SerializeField] LayerMask whatIsGround;
     [SerializeField] PlayerMovement pm;
 
+    [Header("Sound")]
+    [SerializeField] AudioClip grappleAudio;
+    AudioSource audioSource;
+
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -114,6 +119,8 @@ public class GrappleGun : MonoBehaviour
         {
             grapplesLeft--;
             once = true;
+
+            audioSource.PlayOneShot(grappleAudio);
         }
 
         if (!grappling && pm.grounded)
