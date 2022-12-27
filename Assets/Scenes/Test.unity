@@ -1801,10 +1801,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
-    - target: {fileID: 4030684299951985672, guid: 177d3a2a10673bf4a848341bea460dde, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 177d3a2a10673bf4a848341bea460dde, type: 3}
