@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform orientation;
 
-    [Header("Animation")]
-    [SerializeField] Animator animator;
+    //[Header("Animation")]
+    //[SerializeField] Animator animator;
 
     void Start()
     {
@@ -76,14 +76,14 @@ public class PlayerMovement : MonoBehaviour
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 
-        // animation
-        if (rb.velocity.magnitude > 0)
-        {
-            animator.SetBool("isRunning", true);
-        } else
-        {
-            animator.SetBool("isRunning", false);
-        }
+        //// animation
+        //if (rb.velocity.magnitude > 0)
+        //{
+        //    animator.SetBool("isRunning", true);
+        //} else
+        //{
+        //    animator.SetBool("isRunning", false);
+        //}
     }
 
     private void MovePlayer()
