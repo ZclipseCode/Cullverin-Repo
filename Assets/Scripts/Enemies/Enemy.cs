@@ -4,7 +4,7 @@ using UnityEngine;
 // ***
 using UnityEngine.AI;
 
-public class Paintballer : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [Header("Player and Ground")]
     [SerializeField] NavMeshAgent agent;
@@ -39,7 +39,7 @@ public class Paintballer : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -49,7 +49,7 @@ public class Paintballer : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && ! playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
