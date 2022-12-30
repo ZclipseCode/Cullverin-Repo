@@ -28,13 +28,18 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform orientation;
 
-    //[Header("Animation")]
-    //[SerializeField] Animator animator;
+    // paint
+    float tempDrag;
+    float tempSpeed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        // paint
+        tempDrag = groundDrag;
+        tempSpeed = moveSpeed;
     }
 
     void Update()
@@ -54,6 +59,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
+
+        // paint
+        ResetMovement();
     }
 
     private void FixedUpdate()
@@ -75,15 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
-
-        //// animation
-        //if (rb.velocity.magnitude > 0)
-        //{
-        //    animator.SetBool("isRunning", true);
-        //} else
-        //{
-        //    animator.SetBool("isRunning", false);
-        //}
     }
 
     private void MovePlayer()
@@ -125,5 +124,28 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    // paint
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Paint")
+        {
+            groundDrag = 0;
+            moveSpeed = tempSpeed + 7;
+        }
+    }
+
+    void ResetMovement()
+    {
+        if (groundDrag < tempDrag)
+        {
+            groundDrag += Time.deltaTime * 0.8f;
+        }
+
+        if (moveSpeed > tempSpeed)
+        {
+            moveSpeed -= Time.deltaTime * 2;
+        }
     }
 }

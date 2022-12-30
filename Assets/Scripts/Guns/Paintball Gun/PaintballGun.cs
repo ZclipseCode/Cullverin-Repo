@@ -34,6 +34,7 @@ public class PaintballGun : MonoBehaviour
     [Header("Paint")]
     [SerializeField] LayerMask whatIsGround;
     [SerializeField] GameObject paintGraphic;
+    [SerializeField] GameObject slipperyArea;
 
     private void Awake()
     {
@@ -108,12 +109,13 @@ public class PaintballGun : MonoBehaviour
 
             if (rayHit.collider.CompareTag("Ground"))
             {
+                // graphics
                 Instantiate(paintGraphic, rayHit.point, Quaternion.LookRotation(rayHit.normal));
+                Instantiate(slipperyArea, rayHit.point, Quaternion.LookRotation(rayHit.normal));
             }
         }
 
         // graphics
-        Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.LookRotation(rayHit.normal)); // Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0)); (Quaternion.LookRotation(rayHit.normal) faces towards player, or more accurately, the ray(?))
         Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         bulletsLeft--;
