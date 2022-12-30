@@ -142,11 +142,22 @@ public class PaintballGun : MonoBehaviour
         Invoke("ReloadFinished", reloadTime);
 
         audioSource.PlayOneShot(reloadAudio);
+
+        // reset paint
+        ResetPaint();
     }
 
     private void ReloadFinished()
     {
         bulletsLeft = magazineSize;
         reloading = false;
+    }
+
+    // reset paint
+    void ResetPaint()
+    {
+        GameObject[] paints = GameObject.FindGameObjectsWithTag("Paint");
+        foreach (GameObject paint in paints)
+            GameObject.Destroy(paint);
     }
 }
