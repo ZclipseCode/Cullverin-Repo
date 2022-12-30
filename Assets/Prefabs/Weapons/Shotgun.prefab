@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 5609824993633113006}
   - component: {fileID: 5609824993633113007}
   - component: {fileID: 515602433}
+  - component: {fileID: 683615282}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -97,6 +98,8 @@ MonoBehaviour:
   text: {fileID: 0}
   shootAudio: {fileID: 8300000, guid: e7c58ec0d9383ca409f638a23646b424, type: 3}
   reloadAudio: {fileID: 8300000, guid: 483a4cd86ee01534a8bb1dc9a4635446, type: 3}
+  getX: 0
+  getY: 0
 --- !u!82 &515602433
 AudioSource:
   m_ObjectHideFlags: 0
@@ -193,6 +196,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &683615282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5609824993633113001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c19c190c21d1ea4cac370e1bf50253a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7923047521394778979
 PrefabInstance:
   m_ObjectHideFlags: 0

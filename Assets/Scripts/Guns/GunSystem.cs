@@ -7,7 +7,7 @@ public class GunSystem : MonoBehaviour
 {
     // gun stats
     [SerializeField] private int damage;
-    [SerializeField] private float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
+    [SerializeField] public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
     [SerializeField] private int magazineSize, bulletsPerTap;
     [SerializeField] private bool allowButtonHold;
     private int bulletsLeft, bulletsShot;
@@ -16,10 +16,10 @@ public class GunSystem : MonoBehaviour
     private bool shooting, readyToShoot, reloading;
 
     // reference
-    [SerializeField] private Camera fpsCam;
+    [SerializeField] public Camera fpsCam;
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private RaycastHit rayHit;
-    [SerializeField] private LayerMask whatIsEnemy;
+    [SerializeField] public RaycastHit rayHit;
+    [SerializeField] public LayerMask whatIsEnemy;
 
     // graphics
     [SerializeField] private GameObject muzzleFlash, bulletHoleGraphic;
@@ -29,6 +29,11 @@ public class GunSystem : MonoBehaviour
     [SerializeField] AudioClip shootAudio;
     [SerializeField] AudioClip reloadAudio;
     AudioSource audioSource;
+
+    // shotgun
+    [Header("Shotgun (Ignore)")]
+    public float getX;
+    public float getY;
 
     private void Awake()
     {
@@ -79,6 +84,10 @@ public class GunSystem : MonoBehaviour
         // spread
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
+
+        // shotgun
+        getX = x;
+        getX = y;
 
         // calculate direction with spread
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
