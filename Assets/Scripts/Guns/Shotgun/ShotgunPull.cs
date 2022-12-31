@@ -8,16 +8,22 @@ public class ShotgunPull : MonoBehaviour
     [SerializeField] float pullRange;
     Transform player;
     Transform enemy;
+    Vector3 deltaPos;
+    bool enemySelected = false;
+    [SerializeField] float pullSpeed;
+
+    PullContact pullContact;
 
     void Start()
     {
         gunSystem = GetComponent<GunSystem>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        pullContact = player.GetComponent<PullContact>();
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetKey(KeyCode.Mouse1) && !pullContact.contacted)
         {
             // calculate direction with spread
             Vector3 direction = gunSystem.fpsCam.transform.forward + new Vector3(gunSystem.getX, gunSystem.getY, 0);
@@ -29,13 +35,23 @@ public class ShotgunPull : MonoBehaviour
                 {
                     enemy = gunSystem.rayHit.transform;
 
-                    if (player.transform.position != enemy.transform.position)
+                    // magnet
+                    if (!enemySelected)
                     {
-                        // fix this ******************************
-                        player.transform.position = new Vector3(Time.deltaTime * 0.125f, Time.deltaTime * 0.125f, Time.deltaTime * 0.125f);
+                        deltaPos = player.position - enemy.position;
+                        enemySelected = true;
+                    }
+
+                    if (player.transform.position != deltaPos)
+                    {
+                        player.transform.position -= deltaPos * Time.deltaTime * pullSpeed;
                     }
                 }
             }
+        }
+        else
+        {
+            enemySelected = false;
         }
     }
 }

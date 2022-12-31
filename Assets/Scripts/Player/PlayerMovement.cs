@@ -126,9 +126,9 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
-    // paint
     private void OnTriggerEnter(Collider other)
     {
+        // paint
         if (other.tag == "Paint")
         {
             groundDrag = 0;

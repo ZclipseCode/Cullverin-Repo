@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c19c190c21d1ea4cac370e1bf50253a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pullRange: 300
+  pullSpeed: 1.5
 --- !u!1001 &7923047521394778979
 PrefabInstance:
   m_ObjectHideFlags: 0

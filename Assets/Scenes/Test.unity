@@ -192,10 +192,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 688134354}
     m_Modifications:
-    - target: {fileID: 683615282, guid: ef12782b2abfc1e499cf0ef0a38c9db5, type: 3}
-      propertyPath: pullRange
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 5609824993633113001, guid: ef12782b2abfc1e499cf0ef0a38c9db5, type: 3}
       propertyPath: m_Name
       value: Shotgun
@@ -1493,7 +1489,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24918
+  m_Name: pb_Mesh24922
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2344,7 +2340,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24838
+  m_Name: pb_Mesh24842
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
