@@ -7,7 +7,7 @@ public class DestroyRocket : MonoBehaviour
     [SerializeField] GameObject explosion;
     [SerializeField] float deleteTime;
     float currentTime = 0;
-    Transform rocketTrail;
+    //Transform rocketTrail;
 
     void Start()
     {
@@ -16,27 +16,21 @@ public class DestroyRocket : MonoBehaviour
 
     void Update()
     {
-        rocketTrail = GameObject.FindGameObjectWithTag("Rocket Trail").GetComponent<Transform>();
+        //rocketTrail = GameObject.FindGameObjectWithTag("Rocket Trail").GetComponent<Transform>();
 
         currentTime += Time.deltaTime;
 
         if (currentTime >= deleteTime)
         {
-            Explosion();
+            Destroy(gameObject);
         }
-    }
-
-    void Explosion()
-    {
-        Instantiate(explosion, rocketTrail.transform.position, Quaternion.identity);
-        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Enemy")
         {
-            Explosion();
+            Destroy(gameObject);
         }
     }
 }
