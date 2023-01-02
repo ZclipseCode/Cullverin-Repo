@@ -44,13 +44,6 @@ public class RocketCollider : MonoBehaviour
         }
     }
 
-    //void Explode()
-    //{
-    //    Instantiate(explosion, colGo.transform.position, Quaternion.identity);
-    //    audioSource.PlayOneShot(explosionAudio);
-    //    Destroy(gameObject);
-    //}
-
     IEnumerator Explode()
     {
         exploded = true;

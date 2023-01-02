@@ -81,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2318874019093842569
 Transform:
   m_ObjectHideFlags: 0
@@ -131,6 +131,8 @@ MonoBehaviour:
   text: {fileID: 0}
   shootAudio: {fileID: 8300000, guid: 95c2305ae01ca6848b303a32c6a4d32b, type: 3}
   reloadAudio: {fileID: 8300000, guid: 17872a5e552482d469296e286638d78c, type: 3}
+  getX: 0
+  getY: 0
 --- !u!120 &1549126044
 LineRenderer:
   serializedVersion: 2

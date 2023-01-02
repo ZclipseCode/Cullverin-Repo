@@ -9,10 +9,10 @@ public class rpgSystem : MonoBehaviour
     [SerializeField] public float timeBetweenShooting, reloadTime, timeBetweenShots;
     [SerializeField] private int magazineSize, bulletsPerTap;
     [SerializeField] private bool allowButtonHold;
-    private int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot;
 
     // bools
-    private bool shooting, readyToShoot, reloading;
+    public bool shooting, readyToShoot, reloading;
 
     // reference
     [SerializeField] public Camera fpsCam;

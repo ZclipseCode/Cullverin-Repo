@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 6536785397601193109}
   - component: {fileID: 160494650}
   - component: {fileID: 160494649}
+  - component: {fileID: 2035005950}
   m_Layer: 0
   m_Name: RPG Controller
   m_TagString: Untagged
@@ -388,9 +389,30 @@ MonoBehaviour:
   magazineSize: 1
   bulletsPerTap: 1
   allowButtonHold: 0
+  bulletsLeft: 0
+  bulletsShot: 0
+  shooting: 0
+  readyToShoot: 0
+  reloading: 0
   fpsCam: {fileID: 0}
   attackPoint: {fileID: 1076229436}
   muzzleFlash: {fileID: 1000012600307132, guid: fa900c97e526b264ea626524b1a69458, type: 3}
   text: {fileID: 0}
   shootAudio: {fileID: 8300000, guid: ce165086587974f41b00ffcc7a4a146f, type: 3}
   reloadAudio: {fileID: 8300000, guid: ca472b51b1e21b247be1c316e4f6a49d, type: 3}
+--- !u!114 &2035005950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6536785397601193114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c455ab332cfb81d4c986363b069723a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRb: {fileID: 0}
+  rocketSpeed: 40
+  rocketRiding: 0
+  playerMovement: {fileID: 0}
