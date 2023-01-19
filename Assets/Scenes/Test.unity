@@ -2819,6 +2819,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 362352143}
     - target: {fileID: 2035005950, guid: 932c3961b33c88c4fa2002316b1a5895, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 1000013462590818, guid: 236d296e52bbb884ba0415a88bd123f8, type: 3}
+    - target: {fileID: 2035005950, guid: 932c3961b33c88c4fa2002316b1a5895, type: 3}
+      propertyPath: shootAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: ce165086587974f41b00ffcc7a4a146f, type: 3}
+    - target: {fileID: 2035005950, guid: 932c3961b33c88c4fa2002316b1a5895, type: 3}
+      propertyPath: explosionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: e2b4d0b05a0709043a72657565342f32, type: 3}
+    - target: {fileID: 2035005950, guid: 932c3961b33c88c4fa2002316b1a5895, type: 3}
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 362352142}

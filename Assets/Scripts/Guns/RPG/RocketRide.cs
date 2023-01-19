@@ -12,9 +12,23 @@ public class RocketRide : MonoBehaviour
     public bool rocketRiding = false;
     [SerializeField] PlayerMovement playerMovement;
 
+    // audio
+    [Header("Audio")]
+    [SerializeField] AudioClip shootAudio;
+    [SerializeField] AudioClip explosionAudio;
+    AudioSource audioSource;
+    bool playExplosion = false;
+
+    // explosion
+    [Header("Explosion")]
+    [SerializeField] GameObject explosion;
+
     void Start()
     {
         system = GetComponent<rpgSystem>();
+
+        // audio
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -24,6 +38,9 @@ public class RocketRide : MonoBehaviour
         {
             rocketRiding = true;
             ModifiedShoot();
+
+            // audio
+            playExplosion = true;
         }
 
         if (rocketRiding)
@@ -33,6 +50,17 @@ public class RocketRide : MonoBehaviour
         } else
         {
             playerMovement.enabled = true;
+
+            // audio
+            if (playExplosion)
+            {
+                audioSource.PlayOneShot(explosionAudio);
+
+                // explosion
+                Instantiate(explosion, playerRb.position, Quaternion.identity);
+
+                playExplosion = false;
+            }
         }
     }
 
@@ -44,5 +72,8 @@ public class RocketRide : MonoBehaviour
         system.bulletsShot--;
 
         system.enabled = false;
+
+        // audio
+        audioSource.PlayOneShot(shootAudio);
     }
 }
